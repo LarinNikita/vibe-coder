@@ -91,11 +91,13 @@ export default function ProjectTable({
       <div className="border rounded-lg overflow-hidden">
         <Table>
           <TableHeader>
-            <TableHead>Project</TableHead>
-            <TableHead>Template</TableHead>
-            <TableHead>Created</TableHead>
-            <TableHead>User</TableHead>
-            <TableHead className="w-[50px]">Actions</TableHead>
+            <TableRow>
+              <TableHead>Project</TableHead>
+              <TableHead>Template</TableHead>
+              <TableHead>Created</TableHead>
+              <TableHead>User</TableHead>
+              <TableHead className="w-[50px]">Actions</TableHead>
+            </TableRow>
           </TableHeader>
           <TableBody>
             {projects.map((project) => (
@@ -125,7 +127,7 @@ export default function ProjectTable({
                   <div className="flex items-center gap-2">
                     <div className="size-8 rounded-full overflow-hidden">
                       <Image
-                        src={project.user.image}
+                        src={project.user.image || ''}
                         alt={project.user.name}
                         width={32}
                         height={32}

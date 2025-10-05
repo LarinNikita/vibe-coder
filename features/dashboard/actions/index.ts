@@ -11,7 +11,6 @@ export const createPlayground = async (data: {
   title: string;
   template: Templates;
   description?: string;
-  userId: string;
 }) => {
   const { title, description, template } = data;
 

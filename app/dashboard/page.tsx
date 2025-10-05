@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { Plus } from 'lucide-react';
 
 import ProjectTable from '@/features/dashboard/components/project-table';
 import AddNewButton from '@/features/dashboard/components/add-new-button';
@@ -11,10 +10,8 @@ import {
   getAllPlaygroundsForUser,
 } from '@/features/dashboard/actions';
 
-import { Button } from '@/components/ui/button';
 import {
   Empty,
-  EmptyContent,
   EmptyDescription,
   EmptyHeader,
   EmptyTitle,
@@ -45,12 +42,6 @@ export default async function Page() {
             <EmptyDescription>
               Create a new project to get started
             </EmptyDescription>
-            <EmptyContent>
-              <Button>
-                <Plus className="size-4" />
-                Create a new project
-              </Button>
-            </EmptyContent>
           </Empty>
         ) : (
           <ProjectTable
