@@ -88,6 +88,8 @@ export const editProjectById = async (
       },
       data,
     });
+
+    revalidatePath('/dashboard');
   } catch (error) {
     console.error(error);
     return null;
