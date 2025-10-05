@@ -6,6 +6,7 @@ import { auth } from '@/auth';
 
 import './globals.css';
 
+import { Toaster } from '@/components/ui/sonner';
 import { ThemeProvider } from '@/components/providers/theme-provider';
 
 const poppins = Poppins({
@@ -36,6 +37,7 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <Toaster />
             {children}
           </ThemeProvider>
         </body>
