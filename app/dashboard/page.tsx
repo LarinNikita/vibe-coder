@@ -1,8 +1,15 @@
 import Image from 'next/image';
 import { Plus } from 'lucide-react';
 
+import ProjectTable from '@/features/dashboard/components/project-table';
 import AddNewButton from '@/features/dashboard/components/add-new-button';
 import AddRepoButton from '@/features/dashboard/components/add-repo-button';
+import {
+  deleteProjectById,
+  duplicateProjectById,
+  editProjectById,
+  getAllPlaygroundsForUser,
+} from '@/features/dashboard/actions';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -13,8 +20,8 @@ import {
   EmptyTitle,
 } from '@/components/ui/empty';
 
-export default function Page() {
-  const playgrounds: any[] = [];
+export default async function Page() {
+  const playgrounds = await getAllPlaygroundsForUser();
 
   return (
     <div className="flex flex-col justify-start items-center min-h-screen mx-auto max-w-7xl px-4 py-10">
@@ -46,8 +53,15 @@ export default function Page() {
             </EmptyContent>
           </Empty>
         ) : (
-          // TODO add playground table
-          <p>No Playgrounds</p>
+          <ProjectTable
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            //@ts-ignore
+            // TODO UPDATE TYPES OF PLAYGROUNDS
+            projects={playgrounds || []}
+            onDeleteProject={deleteProjectById}
+            onUpdateProject={editProjectById}
+            onDuplicateProject={duplicateProjectById}
+          />
         )}
       </div>
     </div>
