@@ -56,7 +56,6 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-  AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
 
 interface ProjectTableProps {
@@ -85,7 +84,7 @@ export default function ProjectTable({
     description: '',
   });
   const [isLoading, setIsLoading] = useState(false);
-  const [favoutrie, setFavourite] = useState(false);
+  // const [favoutrie, setFavourite] = useState(false);
 
   const handleDuplicateProject = async (project: Project) => {
     if (!onDuplicateProject) return;
