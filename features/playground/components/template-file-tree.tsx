@@ -91,7 +91,7 @@ interface TemplateFileTreeProps {
   ) => void;
 }
 
-function TemplateFileFree({
+function TemplateFileTree({
   data,
   onFileSelect,
   selectedFile,
@@ -145,10 +145,10 @@ function TemplateFileFree({
                   <TemplateNode
                     key={index}
                     item={child}
-                    level={0}
-                    path=""
                     onFileSelect={onFileSelect}
                     selectedFile={selectedFile}
+                    level={0}
+                    path=""
                     onAddFile={onAddFile}
                     onAddFolder={onAddFolder}
                     onDeleteFile={onDeleteFile}
@@ -160,10 +160,10 @@ function TemplateFileFree({
               ) : (
                 <TemplateNode
                   item={data}
-                  level={0}
-                  path=""
                   onFileSelect={onFileSelect}
                   selectedFile={selectedFile}
+                  level={0}
+                  path=""
                   onAddFile={onAddFile}
                   onAddFolder={onAddFolder}
                   onDeleteFile={onDeleteFile}
@@ -191,7 +191,7 @@ function TemplateFileFree({
   );
 }
 
-export default TemplateFileFree;
+export default TemplateFileTree;
 
 interface NewFileDialogProps {
   isOpen: boolean;
